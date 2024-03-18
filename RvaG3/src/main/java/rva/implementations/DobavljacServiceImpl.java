@@ -25,6 +25,11 @@ public class DobavljacServiceImpl implements DobavljacService {
 	public boolean existsById(int id) {
 		return repo.existsById(id);
 	}
+	
+	@Override
+	public Optional<Dobavljac> findById(int id){
+		return repo.findById(id);
+	}
 
 	@Override
 	public Dobavljac create(Dobavljac t) {
@@ -34,6 +39,7 @@ public class DobavljacServiceImpl implements DobavljacService {
 	@Override
 	public Optional<Dobavljac> update(Dobavljac t, int id) {
 		if(existsById(id)) {
+			t.setId(id);
 			return Optional.of(repo.save(t));
 		}
 		return Optional.empty();

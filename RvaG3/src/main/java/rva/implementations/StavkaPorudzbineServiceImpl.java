@@ -27,6 +27,11 @@ public class StavkaPorudzbineServiceImpl implements StavkaPorudzbineService {
 	public boolean existsById(int id) {
 		return repo.existsById(id);
 	}
+	
+	@Override
+	public Optional<StavkaPorudzbine> findById(int id){
+		return repo.findById(id);
+	}
 
 	@Override
 	public StavkaPorudzbine create(StavkaPorudzbine t) {
@@ -36,6 +41,7 @@ public class StavkaPorudzbineServiceImpl implements StavkaPorudzbineService {
 	@Override
 	public Optional<StavkaPorudzbine> update(StavkaPorudzbine t, int id) {
 		if(existsById(id)) {
+			t.setId(id);
 			return Optional.of(repo.save(t));
 		}
 		return Optional.empty();

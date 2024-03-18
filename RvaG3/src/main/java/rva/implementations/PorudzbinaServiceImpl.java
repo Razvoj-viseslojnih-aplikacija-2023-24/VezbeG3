@@ -26,6 +26,11 @@ public class PorudzbinaServiceImpl implements PorudzbinaService {
 	public boolean existsById(int id) {
 		return repo.existsById(id);
 	}
+	
+	@Override
+	public Optional<Porudzbina> findById(int id){
+		return repo.findById(id);
+	}
 
 	@Override
 	public Porudzbina create(Porudzbina t) {
@@ -35,6 +40,7 @@ public class PorudzbinaServiceImpl implements PorudzbinaService {
 	@Override
 	public Optional<Porudzbina> update(Porudzbina t, int id) {
 		if(existsById(id)) {
+			t.setId(id);
 			return Optional.of(repo.save(t));
 		}
 		return Optional.empty();

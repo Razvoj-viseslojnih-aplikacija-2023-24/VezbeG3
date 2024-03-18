@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,10 +34,11 @@ public class Porudzbina implements Serializable {
 	private double iznos;
 	private boolean placeno;
 
-	@OneToMany(mappedBy = "porudzbina")
+	@OneToMany(mappedBy = "porudzbina", cascade = CascadeType.REMOVE)
 	private List<StavkaPorudzbine> stavke;
 
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name = "dobavljac")
 	private Dobavljac dobavljac;
 
