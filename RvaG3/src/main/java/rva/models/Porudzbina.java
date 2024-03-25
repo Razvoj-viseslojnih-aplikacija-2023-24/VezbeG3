@@ -35,10 +35,10 @@ public class Porudzbina implements Serializable {
 	private boolean placeno;
 
 	@OneToMany(mappedBy = "porudzbina", cascade = CascadeType.REMOVE)
+	@JsonIgnore
 	private List<StavkaPorudzbine> stavke;
 
 	@ManyToOne
-	@JsonIgnore
 	@JoinColumn(name = "dobavljac")
 	private Dobavljac dobavljac;
 
