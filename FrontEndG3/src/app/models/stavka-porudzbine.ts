@@ -6,6 +6,7 @@ export class StavkaPorudzbine{
     redniBroj!:number;
     cena!:number;
     jedinicaMere!:string;
+    kolicina!:number;
     artikl!:Artikl;
     porudzbina!:Porudzbina;
 }

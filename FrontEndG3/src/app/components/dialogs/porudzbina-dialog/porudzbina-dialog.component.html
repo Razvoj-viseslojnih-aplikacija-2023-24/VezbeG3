@@ -32,9 +32,9 @@
        </div>
 
        <div class="form">
-            <mat-select placeholder="Dobavljac" name="Dobavljac" [disabled]="flag==3" [(ngModel)]="data.dobavljac" required>
+            <mat-select [compareWith]="compare" placeholder="Dobavljac" name="Dobavljac" [disabled]="flag==3" [(ngModel)]="data.dobavljac" required>
                 <mat-option *ngFor="let dobavljac of dobavljaci" [value]="dobavljac">
-                    {{dobavljac.adresa}}
+                    {{dobavljac.naziv}}
                 </mat-option>
             </mat-select>
        </div>

@@ -7,7 +7,7 @@
       
       <ng-container matColumnDef="datum">
         <mat-header-cell *matHeaderCellDef>Datum</mat-header-cell>
-        <mat-cell *matCellDef="let row">{{ row.datum | date: 'dd.mm.yyyy.' }}</mat-cell>
+        <mat-cell *matCellDef="let row">{{ row.datum | date: 'dd.MM.yyyy.' }}</mat-cell>
       </ng-container>
       
       <ng-container matColumnDef="id">
@@ -17,7 +17,7 @@
       
       <ng-container matColumnDef="isporuceno">
         <mat-header-cell *matHeaderCellDef>Isporuceno</mat-header-cell>
-        <mat-cell *matCellDef="let row">{{ row.isporuceno | date: 'dd.mm.yyyy.' }}</mat-cell>
+        <mat-cell *matCellDef="let row">{{ row.isporuceno | date: 'dd.MM.yyyy.' }}</mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="iznos">
@@ -32,7 +32,7 @@
 
       <ng-container matColumnDef="dobavljac">
         <mat-header-cell *matHeaderCellDef>Dobavljac</mat-header-cell>
-        <mat-cell *matCellDef="let row">{{ row.dobavljac.adresa }}</mat-cell>
+        <mat-cell *matCellDef="let row">{{ row.dobavljac.naziv }}</mat-cell>
       </ng-container>
       <!-- Action Buttons -->
       <ng-container matColumnDef="actions">
