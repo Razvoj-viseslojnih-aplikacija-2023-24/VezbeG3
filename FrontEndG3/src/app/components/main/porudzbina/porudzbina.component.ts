@@ -18,6 +18,8 @@ export class PorudzbinaComponent implements OnInit,OnDestroy {
   dataSource!: MatTableDataSource<Porudzbina>;
   subscription!: Subscription;
 
+  parentSelectedPorudzbina!:Porudzbina;
+
   constructor(private service:PorudzbinaService, public dialog:MatDialog){
 
   }
@@ -53,5 +55,9 @@ export class PorudzbinaComponent implements OnInit,OnDestroy {
         }
       }
     )
+  }
+
+  public selectRow(row:Porudzbina){
+    this.parentSelectedPorudzbina = row;
   }
 }
